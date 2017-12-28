@@ -64,4 +64,19 @@ export class TodoListComponent{
     await todo.save();
     this.editable = false;
   }
+
+  search(value: string, $ev){
+    if(
+      ($ev.keyCode >= 48 && $ev.keyCode <= 57) ||
+      ($ev.keyCode >= 65 && $ev.keyCode <= 90) ||
+      ([8].indexOf($ev.keyCode) >= 0)
+    ){
+      this.todoService.getAll({
+        pageSize: 10,
+        start: 0,
+        filter: "description == :1",
+        params: [`*${value}*`]
+      });
+    }
+  }
 }

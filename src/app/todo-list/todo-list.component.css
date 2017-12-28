@@ -10,3 +10,14 @@ mat-row{
 .done {
   text-decoration: line-through;
 }
+
+
+mat-card-title,
+mat-input-container{
+  text-align: center;
+}
+
+
+mat-card-title>mat-input-container{
+  width: 450px;
+}
