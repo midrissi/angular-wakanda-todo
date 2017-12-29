@@ -13,7 +13,8 @@ import {
   MatDialogModule,
   MatPaginatorModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSortModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -32,7 +33,8 @@ const MODULES = [
   MatDialogModule,
   MatPaginatorModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSortModule
 ];
 
 @NgModule({

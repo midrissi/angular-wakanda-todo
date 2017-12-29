@@ -5,17 +5,19 @@
     </mat-input-container>
   </mat-card-title>
   <mat-card-content>
-    <mat-table #todoList [dataSource]="todos">
+    <mat-table  #todoList [dataSource]="todos"
+                matSort (matSortChange)="onSort(dir, sortables)"
+                direction="let dir" sortables="let sortables">
       <ng-container matColumnDef="ID">
-        <mat-header-cell *matHeaderCellDef>ID.</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID.</mat-header-cell>
         <mat-cell *matCellDef="let one" [ngClass]="{done:one.done}">{{one.ID}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="description">
-        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
         <mat-cell *matCellDef="let one" [ngClass]="{done:one.done}">{{one.description}}</mat-cell>
       </ng-container>
-      <ng-container matColumnDef="completed">
-        <mat-header-cell *matHeaderCellDef>Completed</mat-header-cell>
+      <ng-container matColumnDef="done">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Completed</mat-header-cell>
         <mat-cell *matCellDef="let one">
           <mat-checkbox [checked]="one.done" [disabled]="true"></mat-checkbox>
         </mat-cell>

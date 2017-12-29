@@ -26,6 +26,7 @@ export class TodoService {
     start: number;
     filter?: string;
     params?: (string)[];
+    orderBy?: string
   } = {
     pageSize: 10,
     start: 0
