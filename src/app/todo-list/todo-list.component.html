@@ -6,8 +6,7 @@
   </mat-card-title>
   <mat-card-content>
     <mat-table  #todoList [dataSource]="todos"
-                matSort (matSortChange)="onSort(dir, sortables)"
-                direction="let dir" sortables="let sortables">
+                matSort (matSortChange)="onSort()">
       <ng-container matColumnDef="ID">
         <mat-header-cell *matHeaderCellDef mat-sort-header>ID.</mat-header-cell>
         <mat-cell *matCellDef="let one" [ngClass]="{done:one.done}">{{one.ID}}</mat-cell>
