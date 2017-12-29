@@ -21,7 +21,13 @@ export class TodoService {
     return ds.Todo;
   }
 
-  async getAll(opts = {
+  async getAll(opts: {
+    pageSize: number;
+    start: number;
+    filter?: string;
+    params?: (string)[];
+    orderBy?: string
+  } = {
     pageSize: 10,
     start: 0
   }) {
